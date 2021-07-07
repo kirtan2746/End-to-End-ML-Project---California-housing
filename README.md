@@ -51,8 +51,8 @@ import <<your code goes here>>
 warnings.filterwarnings(action="ignore", message="^internal gelsd")
   
 Now let's load the dataset. The dataset is located in the following path:
-
-**Load the dataset**
+  
+Load the dataset
   
 /cxldata/datasets/project/housing/housing.csv
 
