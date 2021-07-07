@@ -97,7 +97,7 @@ housing["income_cat"] = pd.<<your code goes here>>(housing["median_income"],
 
 housing["income_cat"].hist()
   
- ** Split the dataset**
+  ** Split the dataset**
   
 In this step, we will split the dataset into train and test sets. We will be using the StratifiedShuffleSplit method from the sklearn library which is a cross-validator that provides train/test indices to split data in train/test sets.
 
@@ -179,7 +179,7 @@ Finally, let's get more information on the updated dataset with the new added fe
 
 housing.describe()
   
- ** Fill in the missing data**
+  ** Fill in the missing data**
   
 When you were exploring the dataset, you must have noticed that some of the features had missing data.
 
@@ -209,7 +209,7 @@ X = imputer.<<your code goes here>>(housing_num)
 housing_tr = pd.DataFrame(X, columns=housing_num.columns,
                       index=housing.index)
   
- ** Handling categorical attributes**
+  ** Handling categorical attributes**
   
 So far we have only dealt with numerical attributes, but now let’s look at text attributes. In this dataset, there is just one: the ocean_proximity attribute. A Machine Learning model does not understand categorical values, so we will turn this into a numerical value using onehot encoding.
 
@@ -238,7 +238,7 @@ Finally, we will convert it to a dense Numpy array using toarray method
 
 housing_cat_1hot.<<your code goes here>>()
   
- ** Creating custom transformer**
+  ** Creating custom transformer**
   
 Now we will create a custom transformer to combine the attributes that we created earlier.
 
@@ -310,7 +310,7 @@ Finally, we will fit_transform the entire training data
 
 housing_prepared = full_pipeline.<<your code goes here>>(housing)
   
-**Train a Decision Tree model**
+  **Train a Decision Tree model**
   
 Now that we have prepared the data, we will train a Decision Tree model on that data and see how it performs. Since this is a regression problem, we will use the DecisionTreeRegressor class from Scikit-learn.
 
@@ -391,7 +391,7 @@ forest_scores = cross_val_score(forest_reg, housing_prepared, housing_labels,
 forest_rmse_scores = np.sqrt(-forest_scores)
 display_scores(forest_rmse_scores)
   
-** Fine tune your model with Grid Search**
+  ** Fine tune your model with Grid Search**
   
 We will further fine tune our models using hyper parameter tuning through GridSeachCV. It loops through predefined hyperparameters and fit your estimator (model) on your training set. After this you can select the best set of parameters from the listed hyperparameters to use with your model.
 
