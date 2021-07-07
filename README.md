@@ -52,7 +52,7 @@ warnings.filterwarnings(action="ignore", message="^internal gelsd")
   
 Now let's load the dataset. The dataset is located in the following path:
 
-Load the dataset
+**Load the dataset**
   
 /cxldata/datasets/project/housing/housing.csv
 
@@ -97,7 +97,7 @@ housing["income_cat"] = pd.<<your code goes here>>(housing["median_income"],
 
 housing["income_cat"].hist()
   
-** Split the dataset**
+ ** Split the dataset**
   
 In this step, we will split the dataset into train and test sets. We will be using the StratifiedShuffleSplit method from the sklearn library which is a cross-validator that provides train/test indices to split data in train/test sets.
 
@@ -116,7 +116,7 @@ Finally, we will drop the income_cat column from both the train and test set sin
 for set_ in (strat_train_set, strat_test_set):
     set_.<<your code goes here>>("income_cat", axis=1, inplace=True)
   
- ** Visualize the geographic distribution of the data**
+  ** Visualize the geographic distribution of the data**
   
 In this step we will visualize how the income categories are distributed geographically. This will give us a better understanding of how the housing prices are very much related to the location (e.g., close to the ocean) and to the population density. We will do this by creating a scatter plot.
 
